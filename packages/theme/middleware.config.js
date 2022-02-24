@@ -1,6 +1,6 @@
 module.exports = {
   integrations: {
-    exedio-omnicommerce: {
+    exedioOmnicommerce: {
       location: '@vue-storefront/exedio-omnicommerce-api/server',
       configuration: {}
     }
