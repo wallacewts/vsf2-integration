@@ -16,8 +16,10 @@
     "update:update": "ncu -u"
   },
   "dependencies": {
+    "@vue-storefront/core": "~2.5.4",
     "@vue-storefront/exedio-omnicommerce-api": "0.0.1",
-    "@vue-storefront/core": "~2.5.4"
+    "graphql": "^16.3.0",
+    "graphql-request": "^4.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.6",
