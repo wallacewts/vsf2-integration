@@ -2,7 +2,11 @@ module.exports = {
   integrations: {
     exedioOmnicommerce: {
       location: '@vue-storefront/exedio-omnicommerce-api/server',
-      configuration: {}
+      configuration: {
+        api: {
+          url: 'https://sunrise-qa-api.exedio.com.br/api'
+        }
+      }
     }
   }
 };
