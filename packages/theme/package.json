@@ -29,7 +29,11 @@
     "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.5.0",
     "vee-validate": "^3.4.13",
-    "vue-scrollto": "^2.20.0"
+    "vue-scrollto": "^2.20.0",
+    "vue-loading-overlay": "3",
+    "awesome-mask": "^1.1.1",
+    "awesome-phonenumber": "^2.51.2",
+    "robot-eyes": "ssh://git@gitlab.exedio.com.br:2224/imagio/robot-eyes.git#v0.2.1"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",
