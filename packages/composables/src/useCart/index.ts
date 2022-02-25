@@ -16,20 +16,32 @@ const params: UseCartFactoryParams<Cart, CartItem, Product> = {
     return {};
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  addItem: async (context: Context, { currentCart, product, quantity, customQuery }) => {
+  addItem: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { currentCart, product, quantity, customQuery }
+  ) => {
     console.log('Mocked: useCart.addItem');
     return {};
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  removeItem: async (context: Context, { currentCart, product, customQuery }) => {
+  removeItem: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { currentCart, product, customQuery }
+  ) => {
     console.log('Mocked: useCart.removeItem');
     return {};
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  updateItemQty: async (context: Context, { currentCart, product, quantity, customQuery }) => {
+  updateItemQty: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { currentCart, product, quantity, customQuery }
+  ) => {
     console.log('Mocked: useCart.updateItemQty');
     return {};
   },
@@ -40,8 +52,12 @@ const params: UseCartFactoryParams<Cart, CartItem, Product> = {
     return {};
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  applyCoupon: async (context: Context, { currentCart, couponCode, customQuery }) => {
+  applyCoupon: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { currentCart, couponCode, customQuery }
+  ) => {
     console.log('Mocked: useCart.applyCoupon');
     return {
       updatedCart: {},
@@ -49,8 +65,12 @@ const params: UseCartFactoryParams<Cart, CartItem, Product> = {
     };
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  removeCoupon: async (context: Context, { currentCart, couponCode, customQuery }) => {
+  removeCoupon: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { currentCart, couponCode, customQuery }
+  ) => {
     console.log('Mocked: useCart.removeCoupon');
     return {
       updatedCart: {}

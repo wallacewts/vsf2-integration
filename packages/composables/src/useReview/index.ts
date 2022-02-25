@@ -23,4 +23,6 @@ const params: UseReviewFactoryParams<Review, SearchParams, AddParams> = {
   }
 };
 
-export const useReview = useReviewFactory<Review, SearchParams, AddParams>(params);
+export const useReview = useReviewFactory<Review, SearchParams, AddParams>(
+  params
+);

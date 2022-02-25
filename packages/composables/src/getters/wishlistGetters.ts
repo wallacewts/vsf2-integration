@@ -4,7 +4,10 @@ import {
   AgnosticPrice,
   AgnosticTotals
 } from '@vue-storefront/core';
-import type { Wishlist, WishlistItem } from '@vue-storefront/exedio-omnicommerce-api';
+import type {
+  Wishlist,
+  WishlistItem
+} from '@vue-storefront/exedio-omnicommerce-api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getItems(wishlist: Wishlist): WishlistItem[] {
@@ -42,8 +45,12 @@ function getItemQty(item: WishlistItem): number {
   return 1;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getItemAttributes(item: WishlistItem, filters?: string[]): Record<string, AgnosticAttribute | string> {
+function getItemAttributes(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  item: WishlistItem,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  filters?: string[]
+): Record<string, AgnosticAttribute | string> {
   return {
     color: 'red'
   };

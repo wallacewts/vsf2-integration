@@ -27,8 +27,12 @@ const params: UseUserFactoryParams<User, UpdateParams, RegisterParams> = {
     return {};
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  register: async (context: Context, { email, password, firstName, lastName }) => {
+  register: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { email, password, firstName, lastName }
+  ) => {
     console.log('Mocked: useUser.register');
     return {};
   },
@@ -39,11 +43,17 @@ const params: UseUserFactoryParams<User, UpdateParams, RegisterParams> = {
     return {};
   },
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  changePassword: async (context: Context, { currentUser, currentPassword, newPassword }) => {
+  changePassword: async (
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    context: Context,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    { currentUser, currentPassword, newPassword }
+  ) => {
     console.log('Mocked: useUser.changePassword');
     return {};
   }
 };
 
-export const useUser = useUserFactory<User, UpdateParams, RegisterParams>(params);
+export const useUser = useUserFactory<User, UpdateParams, RegisterParams>(
+  params
+);

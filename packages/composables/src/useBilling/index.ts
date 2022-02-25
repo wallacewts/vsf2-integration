@@ -4,9 +4,7 @@ import {
   UseBillingParams
 } from '@vue-storefront/core';
 import type { BillingAddress } from '@vue-storefront/exedio-omnicommerce-api';
-import type {
-  UseBillingAddParams as AddParams
-} from '../types';
+import type { UseBillingAddParams as AddParams } from '../types';
 
 const params: UseBillingParams<BillingAddress, AddParams> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

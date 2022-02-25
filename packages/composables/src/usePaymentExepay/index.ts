@@ -11,7 +11,10 @@ interface PaymentDetails {
 }
 
 interface UsePaymentExepay {
-  makePayment: (paymentDetails: PaymentDetails, transactionProduct: any) => Promise<boolean>;
+  makePayment: (
+    paymentDetails: PaymentDetails,
+    transactionProduct: any
+  ) => Promise<boolean>;
   makePix: (transactionProduct: any) => Promise<void>;
   qrCodeUrl: Ref<string>;
   error: {
@@ -27,12 +30,21 @@ export const usePaymentExepay = (): UsePaymentExepay => {
   const messageExePay = ref('');
   const qrCodeUrl = ref('');
 
-  const makePayment = async (paymentDetails: PaymentDetails, transactionProduct: any) => {
+  const makePayment = async (
+    paymentDetails: PaymentDetails,
+    transactionProduct: any
+  ) => {
     paymentError.message = '';
 
     const validateCreditCard = (paymentDetails: PaymentDetails) => {
-      const { card_name, card_number, card_cvv, card_expdate_month, card_expdate_year, split } =
-        paymentDetails;
+      const {
+        card_name,
+        card_number,
+        card_cvv,
+        card_expdate_month,
+        card_expdate_year,
+        split
+      } = paymentDetails;
       if (
         card_name.length < 3 ||
         /[0-9]/.test(card_name.toString()) ||
@@ -45,7 +57,6 @@ export const usePaymentExepay = (): UsePaymentExepay => {
         !split.length
       ) {
         paymentError.message = 'Informações de pagamento são inválidas.';
-
       }
     };
 
@@ -55,7 +66,10 @@ export const usePaymentExepay = (): UsePaymentExepay => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ payment: paymentDetails, transaction_product: transactionProduct })
+      body: JSON.stringify({
+        payment: paymentDetails,
+        transaction_product: transactionProduct
+      })
     };
     console.log(paymentDetails);
     const query = await (

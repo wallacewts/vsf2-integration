@@ -11,7 +11,8 @@ function isPasswordChanged(result: PasswordResetResult): boolean {
   return true;
 }
 
-export const forgotPasswordGetters: ForgotPasswordGetters<PasswordResetResult> = {
-  getResetPasswordToken,
-  isPasswordChanged
-};
+export const forgotPasswordGetters: ForgotPasswordGetters<PasswordResetResult> =
+  {
+    getResetPasswordToken,
+    isPasswordChanged
+  };

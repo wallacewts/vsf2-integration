@@ -5,8 +5,12 @@ import type {
   UserShippingAddressSearchCriteria
 } from '@vue-storefront/exedio-omnicommerce-api';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getAddresses(shipping: Address, criteria?: UserShippingAddressSearchCriteria): AddressItem[] {
+function getAddresses(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  shipping: Address,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  criteria?: UserShippingAddressSearchCriteria
+): AddressItem[] {
   return [];
 }
 

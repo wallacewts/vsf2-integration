@@ -2,8 +2,12 @@ import { Store } from '@vue-storefront/exedio-omnicommerce-api';
 import { AgnosticStore, UseStoreGetters } from '@vue-storefront/core';
 import { UseStoreFilterParams } from '../types';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getItems(stores: Store, criteria: UseStoreFilterParams = {}): AgnosticStore[] {
+function getItems(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  stores: Store,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  criteria: UseStoreFilterParams = {}
+): AgnosticStore[] {
   return [];
 }
 

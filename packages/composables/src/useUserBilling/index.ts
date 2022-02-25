@@ -40,4 +40,6 @@ const params: UseUserBillingFactoryParams<Address, AddressItem> = {
   }
 };
 
-export const useUserBilling = useUserBillingFactory<Address, AddressItem>(params);
+export const useUserBilling = useUserBillingFactory<Address, AddressItem>(
+  params
+);

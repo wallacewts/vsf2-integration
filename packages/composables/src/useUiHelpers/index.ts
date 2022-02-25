@@ -41,7 +41,9 @@ const getQueryParameter = (item): string => {
 
 const getFiltersDataFromUrl = (query, onlyFilters) => {
   return Object.keys(query)
-    .filter((f) => (onlyFilters ? !nonFilters.includes(f) : nonFilters.includes(f)))
+    .filter((f) =>
+      onlyFilters ? !nonFilters.includes(f) : nonFilters.includes(f)
+    )
     .reduce(reduceFilters(query), {});
 };
 

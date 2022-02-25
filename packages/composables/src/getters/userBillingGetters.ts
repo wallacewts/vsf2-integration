@@ -5,8 +5,12 @@ import type {
   UserBillingAddressSearchCriteria
 } from '@vue-storefront/exedio-omnicommerce-api';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getAddresses(billing: Address, criteria?: UserBillingAddressSearchCriteria): AddressItem[] {
+function getAddresses(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  billing: Address,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  criteria?: UserBillingAddressSearchCriteria
+): AddressItem[] {
   return [];
 }
 

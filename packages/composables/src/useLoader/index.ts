@@ -1,7 +1,7 @@
 import { ref, Ref } from '@nuxtjs/composition-api';
 
 interface UseLoader {
-  loading: Ref<boolean>
+  loading: Ref<boolean>;
   openLoader: () => Promise<void>;
   closeLoader: () => Promise<void>;
 }

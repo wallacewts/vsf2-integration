@@ -5,7 +5,7 @@ interface UseCreditCard {
   cardHolder: Ref<string>;
   expiresMonth: Ref<string>;
   expiresYear: Ref<string>;
-  isFlipped: Ref<boolean>
+  isFlipped: Ref<boolean>;
   cvv: Ref<string>;
   cardBrand: Ref<string>;
   insertCvv: (value: string) => void;

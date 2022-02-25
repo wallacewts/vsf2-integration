@@ -40,4 +40,6 @@ const params: UseUserShippingFactoryParams<Address, AddressItem> = {
   }
 };
 
-export const useUserShipping = useUserShippingFactory<Address, AddressItem>(params);
+export const useUserShipping = useUserShippingFactory<Address, AddressItem>(
+  params
+);

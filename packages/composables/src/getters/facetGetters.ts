@@ -8,15 +8,26 @@ import {
   AgnosticBreadcrumb,
   AgnosticFacet
 } from '@vue-storefront/core';
-import type { Facet, FacetSearchCriteria } from '@vue-storefront/exedio-omnicommerce-api';
+import type {
+  Facet,
+  FacetSearchCriteria
+} from '@vue-storefront/exedio-omnicommerce-api';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getAll(params: FacetSearchResult<Facet>, criteria?: FacetSearchCriteria): AgnosticFacet[] {
+function getAll(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  params: FacetSearchResult<Facet>,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  criteria?: FacetSearchCriteria
+): AgnosticFacet[] {
   return [];
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getGrouped(params: FacetSearchResult<Facet>, criteria?: FacetSearchCriteria): AgnosticGroupedFacet[] {
+function getGrouped(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  params: FacetSearchResult<Facet>,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  criteria?: FacetSearchCriteria
+): AgnosticGroupedFacet[] {
   return [];
 }
 
@@ -28,8 +39,10 @@ function getSortOptions(params: FacetSearchResult<Facet>): AgnosticSort {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getCategoryTree(params: FacetSearchResult<Facet>): AgnosticCategoryTree {
+function getCategoryTree(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  params: FacetSearchResult<Facet>
+): AgnosticCategoryTree {
   return {
     label: '',
     slug: '',
@@ -45,10 +58,7 @@ function getProducts(params: FacetSearchResult<Facet>): any {
     {
       _id: 1,
       _description: 'Some description',
-      _categoriesRef: [
-        '1',
-        '2'
-      ],
+      _categoriesRef: ['1', '2'],
       name: 'Black jacket',
       sku: 'black-jacket',
       images: [
@@ -56,7 +66,7 @@ function getProducts(params: FacetSearchResult<Facet>): any {
       ],
       price: {
         original: 12.34,
-        current: 10.00
+        current: 10.0
       }
     }
   ];
@@ -73,8 +83,10 @@ function getPagination(params: FacetSearchResult<Facet>): AgnosticPagination {
   };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getBreadcrumbs(params: FacetSearchResult<Facet>): AgnosticBreadcrumb[] {
+function getBreadcrumbs(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  params: FacetSearchResult<Facet>
+): AgnosticBreadcrumb[] {
   return [];
 }
 

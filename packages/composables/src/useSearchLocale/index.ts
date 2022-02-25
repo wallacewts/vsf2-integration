@@ -17,7 +17,7 @@ interface UseSearchLocale {
   cidade: Ref<string>;
   logradouro: Ref<string>;
   error: {
-    message: string
+    message: string;
   };
 }
 
@@ -43,9 +43,13 @@ export const useSearchLocale = (): UseSearchLocale => {
             }
           }
         `;
-        const result: LocaleInfo = await request('http://localhost:5005/graphql', query, {
-          zipCode
-        });
+        const result: LocaleInfo = await request(
+          'http://localhost:5005/graphql',
+          query,
+          {
+            zipCode
+          }
+        );
 
         const { searchLocale } = result;
         bairro.value = searchLocale.bairro;

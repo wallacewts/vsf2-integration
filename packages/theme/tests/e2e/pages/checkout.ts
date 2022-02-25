@@ -43,7 +43,6 @@ class Checkout {
   get phone(): Cypress.Chainable {
     return el(`${this.step}-phone`);
   }
-
 }
 
 class Shipping extends Checkout {
@@ -98,7 +97,6 @@ class Billing extends Checkout {
     this.zipcode.type(customer.address.billing.zipcode);
     this.phone.type(customer.address.billing.phone);
   }
-
 }
 
 class Payment {
@@ -121,9 +119,4 @@ class ThankYou {
   }
 }
 
-export {
-  Shipping,
-  Billing,
-  Payment,
-  ThankYou
-};
+export { Shipping, Billing, Payment, ThankYou };

@@ -10,9 +10,7 @@ import type { Cart, CartItem } from '@vue-storefront/exedio-omnicommerce-api';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getItems(cart: Cart): CartItem[] {
-  return [
-    {}
-  ];
+  return [{}];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -38,8 +36,12 @@ function getItemQty(item: CartItem): number {
   return 1;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function getItemAttributes(item: CartItem, filterByAttributeName?: Array<string>): Record<string, AgnosticAttribute | string> {
+function getItemAttributes(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  item: CartItem,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  filterByAttributeName?: Array<string>
+): Record<string, AgnosticAttribute | string> {
   return {
     color: 'red'
   };

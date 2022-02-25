@@ -10,11 +10,7 @@ function onCreate(settings: Setttings) {
 
 const { createApiClient } = apiClientFactory<Setttings, Endpoints>({
   onCreate,
-  api: {
-
-  }
+  api: {}
 });
 
-export {
-  createApiClient
-};
+export { createApiClient };

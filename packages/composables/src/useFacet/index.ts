@@ -3,9 +3,7 @@ import {
   useFacetFactory,
   FacetSearchResult
 } from '@vue-storefront/core';
-import type {
-  UseFacetSearchParams as SearchParams
-} from '../types';
+import type { UseFacetSearchParams as SearchParams } from '../types';
 
 const factoryParams = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

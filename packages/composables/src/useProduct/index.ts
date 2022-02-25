@@ -4,9 +4,7 @@ import {
   UseProductFactoryParams
 } from '@vue-storefront/core';
 import type { Product } from '@vue-storefront/exedio-omnicommerce-api';
-import type {
-  UseProductSearchParams as SearchParams
-} from '../types';
+import type { UseProductSearchParams as SearchParams } from '../types';
 
 const params: UseProductFactoryParams<Product, SearchParams> = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
