@@ -1,6 +1,10 @@
 export type TODO = unknown;
 
-export type Setttings = TODO;
+export type Setttings = {
+  api: {
+    url: string;
+  };
+};
 
 export type Endpoints = TODO;
 
@@ -10,7 +14,9 @@ export type Cart = TODO;
 
 export type CartItem = TODO;
 
-export type Category = TODO;
+export type Category = {
+  slug: string;
+};
 
 export type Coupon = TODO;
 
@@ -48,7 +54,22 @@ export type UserShippingAddressSearchCriteria = TODO;
 
 export type ShippingAddress = TODO;
 
-export type ShippingMethod = TODO;
+export type ShippingRate = {
+  freeAbove?: {
+    centAmount: number;
+  };
+  price: {
+    centAmount: number;
+  };
+};
+
+export type ZoneRate = {
+  shippingRates: ShippingRate[];
+};
+
+export type ShippingMethod = {
+  zoneRates: ZoneRate[];
+};
 
 export type ShippingProvider = TODO;
 
@@ -56,4 +77,8 @@ export type Store = TODO;
 
 export type Wishlist = TODO;
 
-export type WishlistItem = TODO;
+export type WishlistItem = {
+  variant: {
+    sku: string;
+  };
+};
