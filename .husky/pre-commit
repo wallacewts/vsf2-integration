@@ -2,4 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # add "--parallel" once this bug is fixed https://github.com/okonet/lint-staged/issues/988
-npx lerna run precommit
+npx prettier --config .prettierrc 'packages/**/*.ts' --write
+npx eslint . --ext .ts
