@@ -70,7 +70,7 @@ function getCategoryIds(product: Product): string[] {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getId(product: Product): string {
-  return product.id.toString();
+  return product.id?.toString();
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

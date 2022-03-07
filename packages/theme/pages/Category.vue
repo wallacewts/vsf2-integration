@@ -65,7 +65,7 @@
             <SfProductCard
               v-e2e="'category-product-card'"
               v-for="(product, i) in products"
-              :key="productGetters.getSlug(product)"
+              :key="productGetters.getSlug(product) || i"
               :style="{ '--index': i }"
               :title="productGetters.getName(product)"
               :image="productGetters.getCoverImage(product)"
