@@ -11,19 +11,19 @@ import type {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getName(product: Product): string {
-  return 'Name';
+  return product.name;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getSlug(product: Product): string {
-  return 'slug';
+  return product.slug;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getPrice(product: Product): AgnosticPrice {
   return {
-    regular: 0,
-    special: 0
+    regular: product.regular_price,
+    special: product.special_price
   };
 }
 
@@ -31,38 +31,21 @@ function getPrice(product: Product): AgnosticPrice {
 function getGallery(product: Product): AgnosticMediaGalleryItem[] {
   return [
     {
-      small:
-        'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg',
-      normal:
-        'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg',
-      big: 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
+      small: product.small_image,
+      normal: product.thumbnail,
+      big: product.image
     }
   ];
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getCoverImage(product: Product): string {
-  return 'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg';
+  return product.image;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getFiltered(products: Product[], filters: ProductFilter): Product[] {
-  return [
-    {
-      _id: 1,
-      _description: 'Some description',
-      _categoriesRef: ['1', '2'],
-      name: 'Black jacket',
-      sku: 'black-jacket',
-      images: [
-        'https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081223_1_large.jpg'
-      ],
-      price: {
-        original: 12.34,
-        current: 10.0
-      }
-    }
-  ];
+  return products;
 }
 
 function getAttributes(
@@ -76,17 +59,18 @@ function getAttributes(
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getDescription(product: Product): string {
-  return '';
+  return product.description || '';
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getCategoryIds(product: Product): string[] {
-  return [];
+  const categories = product.category_ids.map((id) => id.toString());
+  return categories;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getId(product: Product): string {
-  return '1';
+  return product.id.toString();
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

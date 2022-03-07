@@ -3,6 +3,8 @@ export type TODO = unknown;
 export type Setttings = {
   api: {
     url: string;
+    images_url: string;
+    elasticSearchIndex: string;
   };
 };
 
@@ -30,7 +32,45 @@ export type OrderItem = TODO;
 
 export type PasswordResetResult = TODO;
 
-export type Product = TODO;
+export type Product = {
+  color: string;
+  color_options: string[];
+  category_ids: number[];
+  description?: string;
+  erin_recommends: string;
+  final_price: number;
+  regular_price: number;
+  id: number;
+  image: string;
+  is_configured: boolean;
+  is_in_stock: boolean;
+  name: string;
+  new: string;
+  parentSku: string;
+  pattern: string;
+  prev_qty: number;
+  price: number;
+  priceInclTax: number;
+  priceTax: number;
+  qty: number;
+  server_cart_id: string;
+  server_item_id: number;
+  size: string;
+  size_options: number[];
+  sku: string;
+  slug: string;
+  small_image: string;
+  specialPriceInclTax: number;
+  specialPriceTax: number;
+  special_price: number;
+  status: number;
+  tax_class_id: string;
+  thumbnail: string;
+  type_id: string;
+  url_key: string;
+  url_path: string;
+  visibility: number;
+};
 
 export type ProductFilter = TODO;
 

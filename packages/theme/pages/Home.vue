@@ -46,12 +46,24 @@
         :settings="{ peek: 16, breakpoints: { 1023: { peek: 0, perView: 2 } } }"
       >
         <template #prev="{ go }">
-          <SfArrow aria-label="prev" class="sf-arrow--left sf-arrow--long" @click="go('prev')" />
+          <SfArrow
+            aria-label="prev"
+            class="sf-arrow--left sf-arrow--long"
+            @click="go('prev')"
+          />
         </template>
         <template #next="{ go }">
-          <SfArrow aria-label="next" class="sf-arrow--right sf-arrow--long" @click="go('next')" />
+          <SfArrow
+            aria-label="next"
+            class="sf-arrow--right sf-arrow--long"
+            @click="go('next')"
+          />
         </template>
-        <SfCarouselItem class="carousel__item" v-for="(product, i) in products" :key="i">
+        <SfCarouselItem
+          class="carousel__item"
+          v-for="(product, i) in products"
+          :key="i"
+        >
           <SfProductCard
             :title="product.title"
             :image="product.image"
@@ -213,7 +225,8 @@ export default {
         subtitle: 'SUMMER COLLECTION 2019',
         background: '#efebe9',
         image: '/homepage/bannerA.webp',
-        className: 'sf-hero-item--position-bg-top-left sf-hero-item--align-right'
+        className:
+          'sf-hero-item--position-bg-top-left sf-hero-item--align-right'
       },
       {
         title: 'Colorful summer dresses are already in store',

@@ -1,6 +1,9 @@
 <template>
   <div id="product">
-    <SfBreadcrumbs class="breadcrumbs desktop-only" :breadcrumbs="breadcrumbs" />
+    <SfBreadcrumbs
+      class="breadcrumbs desktop-only"
+      :breadcrumbs="breadcrumbs"
+    />
     <div class="product">
       <LazyHydrate when-idle>
         <SfGallery :images="productGallery" class="product__gallery" />
@@ -31,14 +34,18 @@
           <div>
             <div class="product__rating">
               <SfRating :score="averageRating" :max="5" />
-              <a v-if="!!totalReviews" href="#" class="product__count"> ({{ totalReviews }}) </a>
+              <a v-if="!!totalReviews" href="#" class="product__count">
+                ({{ totalReviews }})
+              </a>
             </div>
-            <SfButton class="sf-button--text">{{ $t('Read all reviews') }}</SfButton>
+            <SfButton class="sf-button--text">{{
+              $t('Read all reviews')
+            }}</SfButton>
           </div>
         </div>
         <div>
           <p class="product__description desktop-only">
-            {{ description }}
+            {{ productGetters.getDescription(product) }}
           </p>
           <SfButton class="sf-button--text desktop-only product__guide">
             {{ $t('Size guide') }}
@@ -52,7 +59,11 @@
             class="sf-select--underlined product__select-size"
             :required="true"
           >
-            <SfSelectOption v-for="size in options.size" :key="size.value" :value="size.value">
+            <SfSelectOption
+              v-for="size in options.size"
+              :key="size.value"
+              :value="size.value"
+            >
               {{ size.label }}
             </SfSelectOption>
           </SfSelect>
@@ -95,7 +106,11 @@
               :label="$t('Select Channel')"
               class="sf-select--underlined product__select-size"
             >
-              <SfSelectOption v-for="{ channel } in channels" :key="channel.id" :value="channel.id">
+              <SfSelectOption
+                v-for="{ channel } in channels"
+                :key="channel.id"
+                :value="channel.id"
+              >
                 {{ channel.name }}
               </SfSelectOption>
             </SfSelect>
@@ -117,7 +132,11 @@
               class="form__element"
             />
             <div class="freight__info__container">
-              <div class="freight__item" v-for="(item, index) in freightInfo" :key="index">
+              <div
+                class="freight__item"
+                v-for="(item, index) in freightInfo"
+                :key="index"
+              >
                 <div>
                   <SfHeading
                     :title="item.code === '04510' ? 'PAC' : 'SEDEX'"
@@ -125,7 +144,8 @@
                     class="filters__title sf-heading--left"
                   />
                 </div>
-                O valor do frete é {{ item.price }} R$ dentro do prazo de {{ item.deadline }} dias.
+                O valor do frete é {{ item.price }} R$ dentro do prazo de
+                {{ item.deadline }} dias.
               </div>
             </div>
           </div>
@@ -175,11 +195,16 @@
                 class="product__review"
               />
             </SfTab>
-            <SfTab title="Additional Information" class="product__additional-info">
+            <SfTab
+              title="Additional Information"
+              class="product__additional-info"
+            >
               <div class="product__additional-info">
                 <p class="product__additional-info__title">{{ $t('Brand') }}</p>
                 <p>{{ brand }}</p>
-                <p class="product__additional-info__title">{{ $t('Instruction1') }}</p>
+                <p class="product__additional-info__title">
+                  {{ $t('Instruction1') }}
+                </p>
                 <p class="product__additional-info__paragraph">
                   {{ $t('Instruction2') }}
                 </p>
@@ -262,7 +287,8 @@ export default {
     const qty = ref(1);
     const route = useRoute();
     const router = useRouter();
-    const { calcFreightAndPrice, freightInfo } = useFreightAndPriceCalculation();
+    const { calcFreightAndPrice, freightInfo } =
+      useFreightAndPriceCalculation();
     const { products, search } = useProduct('products');
     const {
       products: relatedProducts,
@@ -270,12 +296,15 @@ export default {
       loading: relatedLoading
     } = useProduct('relatedProducts');
     const { addItem, loading } = useCart();
-    const { reviews: productReviews, search: searchReviews } = useReview('productReviews');
+    const { reviews: productReviews, search: searchReviews } =
+      useReview('productReviews');
     const { response: stores } = useStore();
 
     // to be added on local useStore factory
     function getSelected(stores) {
-      return stores.results?.find((result) => result.key === stores._selectedStore);
+      return stores.results?.find(
+        (result) => result.key === stores._selectedStore
+      );
     }
 
     const product = computed(
@@ -285,17 +314,24 @@ export default {
           attributes: route.value.query
         })[0]
     );
-    const options = computed(() => productGetters.getAttributes(products.value, ['color', 'size']));
+    const options = computed(() =>
+      productGetters.getAttributes(products.value, ['color', 'size'])
+    );
     const configuration = computed(() =>
       productGetters.getAttributes(product.value, ['color', 'size'])
     );
-    const categories = computed(() => productGetters.getCategoryIds(product.value));
-    const reviews = computed(() => reviewGetters.getItems(productReviews.value));
+    const categories = computed(() =>
+      productGetters.getCategoryIds(product.value)
+    );
+    const reviews = computed(() =>
+      reviewGetters.getItems(productReviews.value)
+    );
     const selectedStore = computed(() => getSelected(stores.value));
 
     const channelId = ref(null);
     const channels = computed(() => {
-      const productChannels = product.value?.availability?.channels?.results ?? [];
+      const productChannels =
+        product.value?.availability?.channels?.results ?? [];
       return productChannels;
     });
     const selectedDelivery = ref(null);
@@ -303,7 +339,9 @@ export default {
 
     const selectedChannel = computed(() => {
       if (selectedDelivery.value !== 'collect') return null;
-      const selected = channels.value.find((item) => item.channel.id === channelId.value);
+      const selected = channels.value.find(
+        (item) => item.channel.id === channelId.value
+      );
 
       return selected?.channel?.roles && selected?.channel?.id
         ? {
@@ -343,6 +381,7 @@ export default {
       await search({ id: route.value.params.id });
       await searchRelatedProducts({ catId: [categories.value[0]], limit: 8 });
       await searchReviews({ productId: route.value.params.id });
+      console.log(relatedProducts.value);
     });
 
     const updateFilter = (filter) => {
@@ -372,8 +411,12 @@ export default {
       products,
       reviews,
       reviewGetters,
-      averageRating: computed(() => productGetters.getAverageRating(product.value)),
-      totalReviews: computed(() => productGetters.getTotalReviews(product.value)),
+      averageRating: computed(() =>
+        productGetters.getAverageRating(product.value)
+      ),
+      totalReviews: computed(() =>
+        productGetters.getTotalReviews(product.value)
+      ),
       relatedProducts: computed(() =>
         productGetters.getFiltered(relatedProducts.value, { master: true })
       ),
@@ -436,8 +479,6 @@ export default {
           value: 'Germany'
         }
       ],
-      description:
-        'Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.',
       detailsIsActive: false,
       brand:
         'Brand name is the perfect pairing of quality and design. This label creates major everyday vibes with its collection of modern brooches, silver and gold jewellery, or clips it back with hair accessories in geo styles.',
